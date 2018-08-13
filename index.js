@@ -44,6 +44,17 @@ bot.on('guildMemberAdd', member => {
   member.send("You have joined a bumped server. You just gained 250 gems. (If you are new to this bot, be sure to check it out in the guild you joined by typing `/help` in a channel!)")
 });
 
+bot.on('guildMemberRemove', member => {
+  if(!gems[member.id]) {
+    gems[member.id] = {
+      gems: 50,
+      tokens: 0
+    }
+  }
+  gems[member.id].gems = gems[member.id].gems - 300
+  member.send("You left a server. `-300 gems`")
+});
+
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
