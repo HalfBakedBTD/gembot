@@ -8,9 +8,9 @@ exports.run = async (bot, message, args) => {
       tokens: 0
     }
   }
-  message.channel.send(`**${message.author.username}**, you have ${gems[message.author.id].gems}💎 gems.`);
+  message.channel.send(`**${message.author.username}**, you have ${gems[message.author.id].gems}\💎 gems.`);
 }
 
 module.exports.help = {
-  name: "desc"
+  name: "bal"
 }
