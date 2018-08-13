@@ -26,6 +26,7 @@ exports.run = async (bot, message, args) => {
     if (dieAmt === 4) {
       message.channel.send(`Your Number: 7\n1: AD\:gift: 2: 5\:gem: 3: AD\:gift: 4: 25\:gem: 5: AD\:gift: 6: 100\:gem: 7: AD\:gift: 8: 500\:gem:`);
     }
+    message.channel.send(`${ad[adpick]}`);
   }
 }
 
