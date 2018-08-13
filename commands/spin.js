@@ -8,7 +8,7 @@ exports.run = async (bot, message, args) => {
       tokens: 0
     }
   }
-  let prize = ["AD", "GIFT"];
+  let prize = ["AD", "GIFT", "GIFT"];
   let ppick = Math.floor((Math.random() * prize.length));
   if (prize[ppick] === "AD") {
     let ad = ["Join the home of AdBot! Link: https://discord.gg/HuSvZg", "Advertise Here! Message <@284137818895417344> to see about getting placed on this spin wheel for only 5$ a month or 40$ a year!"];
