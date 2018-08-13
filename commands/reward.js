@@ -30,10 +30,6 @@ module.exports.run = async (bot, message, args) => {
   
   message.channel.send(giveEmbed);
 
-  fs.writeFile("./gems.json", JSON.stringify(gems), (err) => {
-    if(err) cosole.log(err)
-  });
-
 }
 
 module.exports.help = {
