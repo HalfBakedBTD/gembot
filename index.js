@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
+const gems = require("./gems.json");
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -25,11 +26,11 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
-  bot.user.setGame(`^help | On ${bot.guilds.size} servers.`);
+  bot.user.setGame(`/help`);
 });
 
 bot.on('guildCreate', guild => {
-  bot.user.setGame(`^help | On ${bot.guilds.size} servers.`);
+  bot.user.setGame(`/help`);
 });
 
 bot.on("message", async message => {
