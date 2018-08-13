@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
     }
     gems[user.id].gems = gems[user.id].gems + amt 
     message.channel.send(`I have given ${user} ${amt} gems.`);
-  }
+  });
 }
 
 module.exports.help = {
