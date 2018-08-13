@@ -30,15 +30,15 @@ exports.run = async (bot, message, args) => {
   }
   if (prize[ppick] === "GIFT") {
     let dieAmtt = Math.floor(Math.random() * 99) + 1;
-    if (dieAmt > 99) {
+    if (dieAmtt > 99) {
       message.channel.send(`Your Number: 8\n\n**Prizes:**\n\t1: AD\:gift: \n\t2: 5\:gem: \n\t3: AD\:gift: \n\t4: 25\:gem: \n\t5: AD\:gift: \n\t6: 100\:gem: \n\t7: AD\:gift: \n\t8: 500\:gem:`);
       gems[message.author.id].gems = gems[message.author.id].gems + 500
       message.channel.send(`You have won 500 gems! You now have ${gems[message.author.id].gems}:gem:.`)
-    } else if (dieAmt > 80) {
+    } else if (dieAmtt > 80) {
       message.channel.send(`Your Number: 6\n\n**Prizes:**\n\t1: AD\:gift: \n\t2: 5\:gem: \n\t3: AD\:gift: \n\t4: 25\:gem: \n\t5: AD\:gift: \n\t6: 100\:gem: \n\t7: AD\:gift: \n\t8: 500\:gem:`);
       gems[message.author.id].gems = gems[message.author.id].gems + 100
       message.channel.send(`You have won 100 gems! You now have ${gems[message.author.id].gems}:gem:.`)
-    } else if (dieAmt > 45) {
+    } else if (dieAmtt > 45) {
       message.channel.send(`Your Number: 4\n\n**Prizes:**\n\t1: AD\:gift: \n\t2: 5\:gem: \n\t3: AD\:gift: \n\t4: 25\:gem: \n\t5: AD\:gift: \n\t6: 100\:gem: \n\t7: AD\:gift: \n\t8: 500\:gem:`);
       gems[message.author.id].gems = gems[message.author.id].gems + 25
       message.channel.send(`You have won 25 gems! You now have ${gems[message.author.id].gems}:gem:.`)
