@@ -40,7 +40,7 @@ bot.on('guildMemberAdd', member => {
       tokens: 0
     }
   }
-  gems[member.id] = gems[member.id] + 250
+  gems[member.id].gems = gems[member.id].gems + 250
   member.send("You have joined a bumped server. You just gained 250 gems. (If you are new to this bot, be sure to check it out in the guild you joined by typing `/help` in a channel!)")
 });
 
