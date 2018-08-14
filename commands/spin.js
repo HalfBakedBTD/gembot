@@ -13,34 +13,34 @@ exports.run = async (bot, message, args) => {
   let prize = ["💰", "💎", "💎", "💎", "💎", "💸", "💸", "💸", "💸", "💸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎"]
   let ppick = Math.floor((Math.random() * prize.length));  
   let amt = 0;
-  if (ppick[prize] === "💰") {
+  if (prize[ppick] === "💰") {
     gems[message.author.id].gems = gems[message.author.id].gems + 1000
     amt = amt + 1000
   }
-  if (ppick[prize] === "💎") {
+  if (prize[ppick] === "💎") {
     gems[message.author.id].gems = gems[message.author.id].gems + 250
     amt = amt + 250
   }
-  if (ppick[prize] === "💸") {
+  if (prize[ppick] === "💸") {
     gems[message.author.id].gems = gems[message.author.id].gems + 195
     amt = amt + 195
   }
-  if (ppick[prize] === "🌸") {
+  if (prize[ppick] === "🌸") {
     gems[message.author.id].gems = gems[message.author.id].gems + 80
     amt = amt + 100
   }
-  if (ppick[prize] === "🍎") {
+  if (prize[ppick] === "🍎") {
     gems[message.author.id].gems = gems[message.author.id].gems + 35
     amt = amt + 35
   }
-  if (ppick[prize] === "🥔") {
+  if (prize[ppick] === "🥔") {
     gems[message.author.id].gems = gems[message.author.id].gems + 20
     amt = amt + 20
   }
   let spinEmbed = new Discord.RichEmbed()
   .setColor('#27ae60')
   .setTitle(`${message.author.username}:`)
-  .setDescription(`Roll: ${ppick[prize]} = ${amt}\n\nRoll Chances:\n🥔 -32%\t🍎 - 28%\n🌸 - 20%\t💸 - 10%\n💎- 8%\t💰 - 2%`);
+  .setDescription(`Roll: ${prize[ppick]} = ${amt}\n\nRoll Chances:\n🥔 -32%\t🍎 - 28%\n🌸 - 20%\t💸 - 10%\n💎- 8%\t💰 - 2%`);
   message.channel.send(spinEmbed);
 }
 
