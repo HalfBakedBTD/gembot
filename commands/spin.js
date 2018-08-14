@@ -8,46 +8,40 @@ exports.run = async (bot, message, args) => {
       tokens: 0
     }
   }
-  let prize = ["AD", "GIFT", "GIFT"];
-  let ppick = Math.floor((Math.random() * prize.length));
-  if (prize[ppick] === "AD") {
-    let ad = ["Join the home of AdBot! Link: https://discord.gg/HuSvZg", "Advertise Here! Message <@284137818895417344> to see about getting placed on this spin wheel for only 5$ a month or 40$ a year!"];
-    let adpick = Math.floor((Math.random() * ad.length));
-    let dieAmt = Math.floor(Math.random() * 3) + 1;
-    if (dieAmt === 1) {
-      message.channel.send(`Your Number: 1\n\n**Prizes:**\n\t1: AD\:gift: \n\t2: 5\:gem: \n\t3: AD\:gift: \n\t4: 25\:gem: \n\t5: AD\:gift: \n\t6: 100\:gem: \n\t7: AD\:gift: \n\t8: 500\:gem:`);
-    }
-    if (dieAmt === 2) {
-      message.channel.send(`Your Number: 3\n\n**Prizes:**\n\t1: AD\:gift: \n\t2: 5\:gem: \n\t3: AD\:gift: \n\t4: 25\:gem: \n\t5: AD\:gift: \n\t6: 100\:gem: \n\t7: AD\:gift: \n\t8: 500\:gem:`);
-    }
-    if (dieAmt === 3) {
-      message.channel.send(`Your Number: 5\n\n**Prizes:**\n\t1: AD\:gift: \n\t2: 5\:gem: \n\t3: AD\:gift: \n\t4: 25\:gem: \n\t5: AD\:gift: \n\t6: 100\:gem: \n\t7: AD\:gift: \n\t8: 500\:gem:`);
-    }
-    if (dieAmt === 4) {
-      message.channel.send(`Your Number: 7\n\n**Prizes:**\n\t1: AD\:gift: \n\t2: 5\:gem: \n\t3: AD\:gift: \n\t4: 25\:gem: \n\t5: AD\:gift: \n\t6: 100\:gem: \n\t7: AD\:gift: \n\t8: 500\:gem:`);
-    }
-    message.channel.send(`${ad[adpick]}`);
+  let ad = ["AD: https://discord.gg/HuSvZg", "Advertise Here! Message @HalfBakedGaming#4048 to see about getting placed on this spin wheel!"];
+  let adpick = Math.floor((Math.random() * ad.length));
+  let prize = ["💰", "💎", "💎", "💎", "💎", "💸", "💸", "💸", "💸", "💸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎 ", "🍎"]
+  let ppick = Math.floor((Math.random() * prize.length));  
+  let amt = 0;
+  if (ppick === "💰") {
+    gems[message.author.id].gems = gems[message.author.id].gems + 1000
+    amt = amt + 1000
   }
-  if (prize[ppick] === "GIFT") {
-    let dieAmtt = Math.floor(Math.random() * 99) + 1;
-    if (dieAmtt > 99) {
-      message.channel.send(`Your Number: 8\n\n**Prizes:**\n\t1: AD\:gift: \n\t2: 5\:gem: \n\t3: AD\:gift: \n\t4: 25\:gem: \n\t5: AD\:gift: \n\t6: 100\:gem: \n\t7: AD\:gift: \n\t8: 500\:gem:`);
-      gems[message.author.id].gems = gems[message.author.id].gems + 500
-      message.channel.send(`You have won 500 gems! You now have ${gems[message.author.id].gems}:gem:.`)
-    } else if (dieAmtt > 80) {
-      message.channel.send(`Your Number: 6\n\n**Prizes:**\n\t1: AD\:gift: \n\t2: 5\:gem: \n\t3: AD\:gift: \n\t4: 25\:gem: \n\t5: AD\:gift: \n\t6: 100\:gem: \n\t7: AD\:gift: \n\t8: 500\:gem:`);
-      gems[message.author.id].gems = gems[message.author.id].gems + 100
-      message.channel.send(`You have won 100 gems! You now have ${gems[message.author.id].gems}:gem:.`)
-    } else if (dieAmtt > 45) {
-      message.channel.send(`Your Number: 4\n\n**Prizes:**\n\t1: AD\:gift: \n\t2: 5\:gem: \n\t3: AD\:gift: \n\t4: 25\:gem: \n\t5: AD\:gift: \n\t6: 100\:gem: \n\t7: AD\:gift: \n\t8: 500\:gem:`);
-      gems[message.author.id].gems = gems[message.author.id].gems + 25
-      message.channel.send(`You have won 25 gems! You now have ${gems[message.author.id].gems}:gem:.`)
-    } else {
-      message.channel.send(`Your Number: 2\n\n**Prizes:**\n\t1: AD\:gift: \n\t2: 5\:gem: \n\t3: AD\:gift: \n\t4: 25\:gem: \n\t5: AD\:gift: \n\t6: 100\:gem: \n\t7: AD\:gift: \n\t8: 500\:gem:`);
-      gems[message.author.id].gems = gems[message.author.id].gems + 5
-      message.channel.send(`You have won 5 gems! You now have ${gems[message.author.id].gems}:gem:.`)
-    }  
+  if (ppick === "💎") {
+    gems[message.author.id].gems = gems[message.author.id].gems + 250
+    amt = amt + 250
   }
+  if (ppick === "💸") {
+    gems[message.author.id].gems = gems[message.author.id].gems + 195
+    amt = amt + 195
+  }
+  if (ppick === "🌸") {
+    gems[message.author.id].gems = gems[message.author.id].gems + 80
+    amt = amt + 100
+  }
+  if (ppick === "🍎") {
+    gems[message.author.id].gems = gems[message.author.id].gems + 35
+    amt = amt + 35
+  }
+  if (ppick === "🥔") {
+    gems[message.author.id].gems = gems[message.author.id].gems + 20
+    amt = amt + 20
+  }
+  let spinEmbed = new Discord.RichEmbed()
+  .setColor('#27ae60')
+  .setTitle(`${message.author.username}:`)
+  .setDescription(`Roll: ${ppick} = ${amt}\n\nRoll Chances:\n🥔 -32%\t🍎 - 28%\n🌸 - 20%\t💸 - 10%\n💎- 8%\t💰 - 2%`);
+  message.channel.send(spinEmbed);
 }
 
 module.exports.help = {
