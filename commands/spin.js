@@ -1,7 +1,11 @@
 const Discord = require("discord.js");
 const gems = require("../gems.json");
+
+const claim_cooldown_time = 30;
+const claim_talked_users = new Set();
 //h
 exports.run = async (bot, message, args) => {
+  if (claim_talked_users.has(message.author.id)) return message.reply("you have to wait 30 seconds between spins.");
   if(!gems[message.author.id]) {
     gems[message.author.id] = {
       gems: 50,
@@ -42,6 +46,10 @@ exports.run = async (bot, message, args) => {
   .setTitle(`${message.author.username}:`)
   .setDescription(`Roll: ${prize[ppick]} = $${amt}\nGiven By: ${ad[adpick]}\n\nRoll Chances:\n🥔 -32%\t🍎 - 28%\n🌸 - 20%\t💸 - 10%\n💎- 8%\t💰 - 2%`);
   message.channel.send(spinEmbed);
+  claim_talked_users.add(message.author.id);
+    setTimeout(() => {
+      claim_talked_users.delete(message.author.id);
+    }, claim_cooldown_time * 1000);
 }
 
 module.exports.help = {
