@@ -26,11 +26,11 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
-  bot.user.setGame(`/help | ${bot.guilds.size} servers.`);
+  bot.user.setGame(`$help | ${bot.guilds.size} servers.`);
 });
 
 bot.on('guildCreate', guild => {
-  bot.user.setGame(`/help | ${bot.guilds.size} servers.`);
+  bot.user.setGame(`$help | ${bot.guilds.size} servers.`);
 });
 
 bot.on('guildMemberAdd', member => {
@@ -41,7 +41,11 @@ bot.on('guildMemberAdd', member => {
     }
   }
   gems[member.id].gems = gems[member.id].gems + 250
-  member.send("You have joined a bumped server. You just gained 250 gems. (If you are new to this bot, be sure to check it out in the guild you joined by typing `/help` in a channel!)")
+  member.send("You have joined a bumped server. You just gained $250. (If you are new to this bot, be sure to check it out in the guild you joined by typing `/help` in a channel!)")
+  if (member.guild.ownerID === '284137818895417344') {
+    gems[member.id].gems = gems[member.id].gems + 250
+    member.send("The bumped server you joined is owned by <@284137818895417344> so you get $250 bonus bucks.");
+  }
 });
 
 bot.on('guildMemberRemove', member => {
@@ -52,7 +56,11 @@ bot.on('guildMemberRemove', member => {
     }
   }
   gems[member.id].gems = gems[member.id].gems - 300
-  member.send("You left a server. `-300 gems`")
+  member.send("You left a bumped server. `-$300`")
+  if (member.guild.ownerID === '284137818895417344') {
+    gems[member.id].gems = gems[member.id].gems - 300
+    member.send("The bumped server you left is owned by <@284137818895417344> so you were penalized. `-$300`");
+  }
 });
 
 bot.on("message", async message => {
