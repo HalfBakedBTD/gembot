@@ -8,7 +8,7 @@ exports.run = async (bot, message, args) => {
       tokens: 0
     }
   }
-  let ad = ["AD: https://discord.gg/HuSvZg", "Advertise Here! Message @HalfBakedGaming#4048 to see about getting placed on this spin wheel!"];
+  let ad = ["GemBot: https://discord.gg/G5QhMFX", "AdBot: https://discord.gg/HuSvZg", "Advertise Here! Message @HalfBakedGaming#4048 to see about getting placed on this spin wheel!"];
   let adpick = Math.floor((Math.random() * ad.length));
   let prize = ["💰", "💎", "💎", "💎", "💎", "💸", "💸", "💸", "💸", "💸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🌸", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🥔", "🍎", "🍎", "🍎", "🍎", "🍎", "🍎", "🍎", "🍎", "🍎", "🍎", "🍎", "🍎", "🍎", "🍎", "🍎"]
   let ppick = Math.floor((Math.random() * prize.length));  
@@ -40,7 +40,7 @@ exports.run = async (bot, message, args) => {
   let spinEmbed = new Discord.RichEmbed()
   .setColor('#27ae60')
   .setTitle(`${message.author.username}:`)
-  .setDescription(`Roll: ${prize[ppick]} = $${amt}\n\nRoll Chances:\n🥔 -32%\t🍎 - 28%\n🌸 - 20%\t💸 - 10%\n💎- 8%\t💰 - 2%`);
+  .setDescription(`Roll: ${prize[ppick]} = $${amt}\nGiven By: ${ad[adpick]}\n\nRoll Chances:\n🥔 -32%\t🍎 - 28%\n🌸 - 20%\t💸 - 10%\n💎- 8%\t💰 - 2%`);
   message.channel.send(spinEmbed);
 }
 
