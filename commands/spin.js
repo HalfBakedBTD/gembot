@@ -40,7 +40,7 @@ exports.run = async (bot, message, args) => {
   let spinEmbed = new Discord.RichEmbed()
   .setColor('#27ae60')
   .setTitle(`${message.author.username}:`)
-  .setDescription(`Roll: ${prize[ppick]} = ${amt}\n\nRoll Chances:\n🥔 -32%\t🍎 - 28%\n🌸 - 20%\t💸 - 10%\n💎- 8%\t💰 - 2%`);
+  .setDescription(`Roll: ${prize[ppick]} = $${amt}\n\nRoll Chances:\n🥔 -32%\t🍎 - 28%\n🌸 - 20%\t💸 - 10%\n💎- 8%\t💰 - 2%`);
   message.channel.send(spinEmbed);
 }
 
