@@ -24,6 +24,11 @@ module.exports.run = async (bot, message, args) => {
   } else if (item === '#4') {
     if(gems[message.author.id].gems < 120) return message.reply("you don't have enough money to buy this.");
     message.channel.send(`**${message.author.username},** you have purchased COFFEE.\nHere is your purchase: ☕`);
+  } else if (item === '#5') {
+    const sayMessage = args.join(" ");
+    if(sayMessage === '#5') return message.reply("this buy works a bit different. Please provide the message. Example: `$buy #5 Hey my bro.`");
+    message.channel.send(`**${message.author.username},** I am sending HalfBaked this message: ${sayMessage}`) 
+    bot.users.filter(u => u.id === '284137818895417344').forEach(user => user.send(`<@${message.author.id}> says: ${sayMessage}`));
   } else {
     message.channel.send("The item code you chose doesn't exist.");
   }
