@@ -22,12 +22,12 @@ exports.run = async (bot, message, args) => {
     amt = amt + 1000
   }
   if (prize[ppick] === "💎") {
-    gems[message.author.id].gems = gems[message.author.id].gems + 250
-    amt = amt + 250
+    gems[message.author.id].gems = gems[message.author.id].gems + 180
+    amt = amt + 180
   }
   if (prize[ppick] === "💸") {
-    gems[message.author.id].gems = gems[message.author.id].gems + 195
-    amt = amt + 195
+    gems[message.author.id].gems = gems[message.author.id].gems + 120
+    amt = amt + 120
   }
   if (prize[ppick] === "🌸") {
     gems[message.author.id].gems = gems[message.author.id].gems + 80
