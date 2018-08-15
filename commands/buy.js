@@ -14,17 +14,23 @@ module.exports.run = async (bot, message, args) => {
   
   if (item === '#1') {
     if(gems[message.author.id].gems < 50) return message.reply("you don't have enough money to buy this.");
+    gems[message.author.id].gems = gems[message.author.id].gems - 50
     message.channel.send(`**${message.author.username},** you have purchased a frog emoji.\nHere is your purchase: 🐸`);
   } else if (item === '#2') {
     if(gems[message.author.id].gems < 80) return message.reply("you don't have enough money to buy this.");
+    gems[message.author.id].gems = gems[message.author.id].gems - 80
     message.channel.send(`**${message.author.username},** you have purchased two frog emojis.\nHere is your purchase: 🐸 - 🐸`);
   } else if (item === '#3') {
     if(gems[message.author.id].gems < 100) return message.reply("you don't have enough money to buy this.");
+    gems[message.author.id].gems = gems[message.author.id].gems - 100
     message.channel.send(`**${message.author.username},** you have purchased some tea.\nHere is your purchase: 🍵`);
   } else if (item === '#4') {
     if(gems[message.author.id].gems < 120) return message.reply("you don't have enough money to buy this.");
+    gems[message.author.id].gems = gems[message.author.id].gems - 120
     message.channel.send(`**${message.author.username},** you have purchased COFFEE.\nHere is your purchase: ☕`);
   } else if (item === '#5') {
+    if(gems[message.author.id].gems < 120) return message.channel.send("Lol, thought you could get this without the $500? Well, you are wrong!");
+    gems[message.author.id].gems = gems[message.author.id].gems - 500
     const sayMessage = args.join(" ");
     if(sayMessage === '#5') return message.reply("this buy works a bit different. Please provide the message. Example: `$buy #5 Hey my bro.`");
     message.channel.send(`**${message.author.username},** I am sending HalfBaked this message: ${sayMessage}`) 
