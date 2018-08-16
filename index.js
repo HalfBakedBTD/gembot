@@ -24,7 +24,7 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
-function stockUpdate(bot, message) {
+function stockUpdate(bot) {
 	 if(!stock[1221221]) {
     stock[1221221] = {
       opal: 50,
@@ -61,7 +61,7 @@ bot.on("ready", async () => {
       sapphire: 2500
     }
   }
-  stockUpdate(bot, message)
+  stockUpdate(bot)
 });
 
 bot.on('guildCreate', guild => {
