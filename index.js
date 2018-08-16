@@ -46,7 +46,7 @@ function stockUpdate(bot) {
 	if (topazi === "up") {
 		stock[1221221].topaz = stock[1221221].topaz + 10
 	} else {
-		stock[1221221].topaz = stock[1221221]. - 10
+		stock[1221221].topaz = stock[1221221].topaz - 10
 	}
 	let diai = ["up", "down"]
 	if (diai === "up") {
