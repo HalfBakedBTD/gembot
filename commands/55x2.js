@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const gems = require("../gems.json");
-let mai = message.author.id;
-//h
+
 exports.run = async (bot, message, args) => {
+  let mai = message.author.id;
   if(!gems[message.author.id]) {
     gems[message.author.id] = {
       gems: 50,
