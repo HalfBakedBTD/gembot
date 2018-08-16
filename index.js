@@ -36,12 +36,13 @@ function stockUpdate(bot, message) {
       sapphire: 2500
     }
   }
+	
   let adEmbed = new Discord.RichEmbed()
   .setColor('#27ae60')
   .setTitle(`Stock Update:`)
-  .setDescription(`Opal - $${stock[1221221].opal}\nTopaz - $${stock[1221221].topaz}\nDiamond - ${stock[1221221].diamond}\nEmerald - ${stock[1221221].emerald}\nAmythest - ${stock[1221221].amythest}\nRuby - ${stock[1221221].ruby}\nSapphire - ${stock[1221221].sapphire}`);
+  .setDescription(`Opal - $${stock[1221221].opal}\nTopaz - $${stock[1221221].topaz}\nDiamond - $${stock[1221221].diamond}\nEmerald - $${stock[1221221].emerald}\nAmythest - $${stock[1221221].amythest}\nRuby - $${stock[1221221].ruby}\nSapphire - $${stock[1221221].sapphire}`);
   bot.channels.filter(c => c.name === 'stock-prices').forEach(channel => channel.send(adEmbed));
- setTimeout(() => stockUpdate(bot, message), 30*60000);
+ setTimeout(() => stockUpdate(bot, message), 5*60000);
 }
 
 bot.on("ready", async () => {
@@ -60,6 +61,7 @@ bot.on("ready", async () => {
       sapphire: 2500
     }
   }
+  stockUpdate(bot, message)
 });
 
 bot.on('guildCreate', guild => {
