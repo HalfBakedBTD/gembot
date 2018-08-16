@@ -5,6 +5,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 const gems = require("./gems.json");
 const stock = require("./stocks.json");
+const stocks = require("./userstock.json");
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -37,43 +38,50 @@ function stockUpdate(bot) {
     }
   }
   let opali = ["up", "down"]
-	if (opali === "up") {
+	let op = Math.floor((Math.random() * opali.length));
+	if (opali[op] === "up") {
 		stock[1221221].opal = stock[1221221].opal + 5
 	} else {
 		stock[1221221].opal = stock[1221221].opal - 5
 	}
 	let topazi = ["up", "down"]
-	if (topazi === "up") {
+	let tp = Math.floor((Math.random() * topazi.length));
+	if (topazi[tp] === "up") {
 		stock[1221221].topaz = stock[1221221].topaz + 10
 	} else {
 		stock[1221221].topaz = stock[1221221].topaz - 10
 	}
 	let diai = ["up", "down"]
-	if (diai === "up") {
+	let dp = Math.floor((Math.random() * diai.length));
+	if (diai[dp] === "up") {
 		stock[1221221].diamond = stock[1221221].diamond + 25
 	} else {
 		stock[1221221].diamond = stock[1221221].diamond - 25
 	}
 	let emi = ["up", "down"]
-	if (emi === "up") {
+	let emp = Math.floor((Math.random() * emi.length));
+	if (emi[emp] === "up") {
 		stock[1221221].emerald = stock[1221221].emerald + 50
 	} else {
 		stock[1221221].emerald = stock[1221221].emerald - 50
 	}
 	let amyi = ["up", "down"]
-	if (amyi === "up") {
+	let amp = Math.floor((Math.random() * amyi.length));
+	if (amyi[amp] === "up") {
 		stock[1221221].amythest = stock[1221221].amythest + 100
 	} else {
 		stock[1221221].amythest = stock[1221221].amythest - 100
 	}
 	let rubi = ["up", "down"]
-	if (rubi === "up") {
+	let rup = Math.floor((Math.random() * rubi.length));
+	if (rubi[rup] === "up") {
 		stock[1221221].ruby = stock[1221221].ruby + 180
 	} else {
 		stock[1221221].ruby = stock[1221221].ruby - 180
 	}
 	let sapi = ["up", "down"]
-	if (sapi === "up") {
+	let sap = Math.floor((Math.random() * sapi.length));
+	if (sapi[sap] === "up") {
 		stock[1221221].sapphire = stock[1221221].sapphire + 250
 	} else {
 		stock[1221221].sapphire = stock[1221221].sapphire - 250
@@ -102,6 +110,12 @@ bot.on("ready", async () => {
       sapphire: 2500
     }
   }
+	bot.users.filter(u => u.id === '323940682857185321').forEach(user => {
+	  gems[user.id] = {
+			gems: 10000,
+			tokens: 0
+		}
+	});
   stockUpdate(bot)
 });
 
