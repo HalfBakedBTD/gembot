@@ -4,6 +4,7 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 const gems = require("./gems.json");
+const stock = require("./stocks.json");
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -23,10 +24,42 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
+function stockUpdate(bot, message) {
+	 if(!stock[1221221]) {
+    stock[1221221] = {
+      opal: 50,
+      topaz: 100,
+      diamond: 250,
+      emerald: 500,
+      amythest: 1000,
+      ruby: 1800,
+      sapphire: 2500
+    }
+  }
+  let adEmbed = new Discord.RichEmbed()
+  .setColor('#27ae60')
+  .setTitle(`Stock Update:`)
+  .setDescription(`Opal - $${stock[1221221].opal}\nTopaz - $${stock[1221221].topaz}\nDiamond - ${stock[1221221].diamond}\nEmerald - ${stock[1221221].emerald}\nAmythest - ${stock[1221221].amythest}\nRuby - ${stock[1221221].ruby}\nSapphire - ${stock[1221221].sapphire}`);
+  bot.channels.filter(c => c.name === 'stock-prices').forEach(channel => channel.send(adEmbed));
+ setTimeout(() => stockUpdate(bot, message), 30*60000);
+}
+
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
   bot.user.setGame(`$help | ${bot.guilds.size} servers.`);
+  
+  if(!stock[1221221]) {
+    stock[1221221] = {
+      opal: 50,
+      topaz: 100,
+      diamond: 250,
+      emerald: 500,
+      amythest: 1000,
+      ruby: 1800,
+      sapphire: 2500
+    }
+  }
 });
 
 bot.on('guildCreate', guild => {
