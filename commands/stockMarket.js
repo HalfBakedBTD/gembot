@@ -20,7 +20,7 @@ exports.run = async (bot, message, args) => {
       sapphire: 2500
     }
   }
-  message.channel.send(`**__Items Avaliable:__**\nOpal - $${stock[1221221].opal}\nTopaz - $${stock[1221221].topaz}\nDiamond - ${stock[1221221].diamond}\nEmerald - ${stock[1221221].emerald}\nAmythest - ${stock[1221221].amythest}\nRuby - ${stock[1221221].ruby}\nSapphire - ${stock[1221221].sapphire}\n\n\`Make a channel named #stock-prices to see changes in the stock.\``);
+  message.channel.send(`**__Items Avaliable:__**\nOpal - $${stock[1221221].opal}\nTopaz - $${stock[1221221].topaz}\nDiamond - $${stock[1221221].diamond}\nEmerald - $${stock[1221221].emerald}\nAmythest - $${stock[1221221].amythest}\nRuby - $${stock[1221221].ruby}\nSapphire - $${stock[1221221].sapphire}\n\n\`Make a channel named #stock-prices to see changes in the stock.\``);
 }
 
 module.exports.help = {
