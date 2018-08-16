@@ -36,13 +36,54 @@ function stockUpdate(bot) {
       sapphire: 2500
     }
   }
-	
+  let opali = ["up", "down"]
+	if (opali === "up") {
+		stock[1221221].opal = stock[1221221].opal + 5
+	} else {
+		stock[1221221].opal = stock[1221221].opal - 5
+	}
+	let topazi = ["up", "down"]
+	if (topazi === "up") {
+		stock[1221221].topaz = stock[1221221].topaz + 10
+	} else {
+		stock[1221221].topaz = stock[1221221]. - 10
+	}
+	let diai = ["up", "down"]
+	if (diai === "up") {
+		stock[1221221].diamond = stock[1221221].diamond + 25
+	} else {
+		stock[1221221].diamond = stock[1221221].diamond - 25
+	}
+	let emi = ["up", "down"]
+	if (emi === "up") {
+		stock[1221221].emerald = stock[1221221].emerald + 50
+	} else {
+		stock[1221221].emerald = stock[1221221].emerald - 50
+	}
+	let amyi = ["up", "down"]
+	if (amyi === "up") {
+		stock[1221221].amythest = stock[1221221].amythest + 100
+	} else {
+		stock[1221221].amythest = stock[1221221].amythest - 100
+	}
+	let rubi = ["up", "down"]
+	if (rubi === "up") {
+		stock[1221221].ruby = stock[1221221].ruby + 180
+	} else {
+		stock[1221221].ruby = stock[1221221].ruby - 180
+	}
+	let sapi = ["up", "down"]
+	if (sapi === "up") {
+		stock[1221221].sapphire = stock[1221221].sapphire + 250
+	} else {
+		stock[1221221].sapphire = stock[1221221].sapphire - 250
+	}
   let adEmbed = new Discord.RichEmbed()
   .setColor('#27ae60')
   .setTitle(`Stock Update:`)
   .setDescription(`Opal - $${stock[1221221].opal}\nTopaz - $${stock[1221221].topaz}\nDiamond - $${stock[1221221].diamond}\nEmerald - $${stock[1221221].emerald}\nAmythest - $${stock[1221221].amythest}\nRuby - $${stock[1221221].ruby}\nSapphire - $${stock[1221221].sapphire}`);
   bot.channels.filter(c => c.name === 'stock-prices').forEach(channel => channel.send(adEmbed));
- setTimeout(() => stockUpdate(bot, message), 5*60000);
+ setTimeout(() => stockUpdate(bot), 5*60000);
 }
 
 bot.on("ready", async () => {
