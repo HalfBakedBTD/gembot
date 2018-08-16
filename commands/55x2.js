@@ -18,10 +18,10 @@ exports.run = async (bot, message, args) => {
 
   if (dieAmt > 54) {
     gems[mai].gems = gems[mai].gems + parseInt(args[0])
-    message.channel.send(`**${message.author.username}:**\nYou have rolled a ${dieAmt} and won ${parseInt(args[0])}!`);
+    message.channel.send(`**${message.author.username}:**\nYou have rolled a ${dieAmt} and won $${parseInt(args[0])}!`);
   } else {
     gems[mai].gems = gems[mai].gems - parseInt(args[0])
-    message.channel.send(`**${message.author.username}:**\nYou have rolled a ${dieAmt} which is lower than 55 so you loose ${parseInt(args[0])}!`);
+    message.channel.send(`**${message.author.username}:**\nYou have rolled a ${dieAmt} which is lower than 55 so you loose $${parseInt(args[0])}!`);
   }
 }
 
