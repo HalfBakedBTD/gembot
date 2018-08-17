@@ -86,6 +86,27 @@ function stockUpdate(bot) {
 	} else {
 		stock[1221221].sapphire = stock[1221221].sapphire - 250
 	}
+	if (stock[1221221].opal < 0) {
+		stock[1221221].opal = 0
+	}
+	if (stock[1221221].topaz < 0) {
+		stock[1221221].topaz = 0
+	}
+	if (stock[1221221].diamond < 0) {
+		stock[1221221].diamond = 0
+	}
+	if (stock[1221221].emerald < 0) {
+		stock[1221221].emerald = 0
+	}
+	if (stock[1221221].amythest < 0) {
+		stock[1221221].amythest = 0
+	}
+	if (stock[1221221].ruby < 0) {
+		stock[1221221].ruby = 0
+	}
+	if (stock[1221221].sapphire < 0) {
+		stock[1221221].sapphire = 0
+	}
   let adEmbed = new Discord.RichEmbed()
   .setColor('#27ae60')
   .setTitle(`Stock Update:`)
