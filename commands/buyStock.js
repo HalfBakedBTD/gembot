@@ -34,7 +34,7 @@ exports.run = async (bot, message, args) => {
     }
   }
   let item = args[0];
-  if(!item) return message.reply("you have to say what you want to buy! EX: `$buyStock emerald`")
+  if(!item) return message.reply("you have to say what you want to buy!\nEX: `$buyStock emerald`")
   if (item === 'opal') {
     if(gems[mai].gems < stock[1221221].opal) return message.channel.send(`**${message.author.username},** you do not have enough money to buy this item.`);
     gems[mai].gems = gems[mai].gems - stock[1221221].opal
