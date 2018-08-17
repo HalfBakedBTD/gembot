@@ -13,7 +13,8 @@ exports.run = async (bot, message, args) => {
       sapphire: 0
     }
   }
+  message.channel.send(`**${message.author.username}'s Stocks:**\nOpal - ${stocks[message.author.id].opal}\nTopaz - ${stocks[message.author.id].topaz}\nDiamond - ${stocks[message.author.id].diamond}\nEmerald - ${stocks[message.author.id].emerald}\nAmythest - ${stocks[message.author.id].amythest}\nRuby - ${stocks[message.author.id].ruby}\nSapphire - ${stocks[message.author.id].sapphire}`);
 }
 module.exports.help = {
-  name: "stockMarket"
+  name: "myStock"
 }
