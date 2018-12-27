@@ -29,8 +29,8 @@ module.exports.run = async (bot, message, args) => {
     gems[message.author.id].gems = gems[message.author.id].gems - 120
     message.channel.send(`**${message.author.username},** you have purchased COFFEE.\nHere is your purchase: ☕`);
   } else if (item === '#5') {
-    if(gems[message.author.id].gems < 120) return message.channel.send("Lol, thought you could get this without the $500? Well, you are wrong!");
-    gems[message.author.id].gems = gems[message.author.id].gems - 500
+    if(gems[message.author.id].gems < 5000) return message.channel.send("Lol, thought you could get this without the $5000? Well, you are wrong!");
+    gems[message.author.id].gems = gems[message.author.id].gems - 5000
     const sayMessage = args.join(" ");
     if(sayMessage === '#5') return message.reply("this buy works a bit different. Please provide the message. Example: `$buy #5 Hey my bro.`");
     message.channel.send(`**${message.author.username},** I am sending HalfBaked this message: ${sayMessage}`) 
