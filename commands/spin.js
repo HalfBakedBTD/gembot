@@ -19,27 +19,27 @@ exports.run = async (bot, message, args) => {
   let amt = 0;
   if (prize[ppick] === "💰") {
     gems[message.author.id].gems = gems[message.author.id].gems + 5000
-    amt = amt + 1000
+    amt = amt + 5000
   }
   if (prize[ppick] === "💎") {
     gems[message.author.id].gems = gems[message.author.id].gems + 2000
-    amt = amt + 180
+    amt = amt + 2000
   }
   if (prize[ppick] === "💸") {
     gems[message.author.id].gems = gems[message.author.id].gems + 1000
-    amt = amt + 120
+    amt = amt + 1000
   }
   if (prize[ppick] === "🌸") {
     gems[message.author.id].gems = gems[message.author.id].gems + 500
-    amt = amt + 100
+    amt = amt + 500
   }
   if (prize[ppick] === "🍎") {
     gems[message.author.id].gems = gems[message.author.id].gems + 100
-    amt = amt + 35
+    amt = amt + 100
   }
   if (prize[ppick] === "🥔") {
     gems[message.author.id].gems = gems[message.author.id].gems + 50
-    amt = amt + 20
+    amt = amt + 50
   }
   let spinEmbed = new Discord.RichEmbed()
   .setColor('#27ae60')
